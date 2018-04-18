@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Image Slider</title>
+</head>
+<body>
+    <script>
+        var i = 0
+        var image = []
+        var time = 2000
+         
+        // list of images
+        image[0] = 'images/img1.jpg'
+        image[1] = 'images/img2.png'
+        image[2] = 'images/img3.png'
+        image[3] = 'images/img4.jpg'
+        image[4] = 'images/img5.jpg'
+
+        function changeImg(){
+            document.slide.src = image[i]
+
+            if(i < image.length-1){
+                i++
+            }
+            else{
+                i = 0
+            }
+
+            setTimeout("changeImg()", time)
+        }
+        window.onload = changeImg
+    </script>
+    <img name="slide" width="500px" height="auto">
+</body>
+</html>
